@@ -1,12 +1,16 @@
-let dieArray = [];
-
-class Die {
-    constructor() {
+"use strict";
+var _this = this;
+var dieArray = [];
+var Die = /** @class */ (function () {
+    function Die(value, div) {
+        var _this = this;
+        this.value = value;
+        this.div = div;
         this.value;
         this.roll();
-        this.div = $(`<div></div>`);
+        this.div = $("<div></div>");
         this.div.text(this.value);
-        $(`#dieDiv`).append(this.div);
+        $("#dieDiv").append(this.div);
         this.div.css({
             "background-color": "grey",
             "height": "100px",
@@ -18,52 +22,45 @@ class Die {
             "text-align": "center",
             "line-height": "100px"
         });
-
-        this.div.click(() => {
-            this.roll();
-            this.div.text(this.value);
-        })
-
-        $(`#rollBtn`).click(() => {
-            dieArray.forEach(() => {
-                this.roll();
-                this.div.text(this.value);
-            })
-        })
-
-        this.div.dblclick(() => {
-            this.removeDie();
-        })
+        this.div.click(function () {
+            _this.roll();
+            _this.div.text(_this.value);
+        });
+        $("#rollBtn").click(function () {
+            dieArray.forEach(function () {
+                _this.roll();
+                _this.div.text(_this.value);
+            });
+        });
+        this.div.dblclick(function () {
+            _this.removeDie();
+        });
     }
-
-    roll() {
+    Die.prototype.roll = function () {
         this.value = Math.floor((Math.random() * 6) + 1);
-    }
-
-    removeDie() {
+    };
+    Die.prototype.removeDie = function () {
         this.div.remove();
-        let index = dieArray.indexOf(this);
+        var index = dieArray.indexOf(this);
         if (index !== -1) {
             dieArray.splice(index, 1);
         }
-    }
-}
-
-$(`#generateBtn`).click(() => {
-    let die = new Die();
+    };
+    return Die;
+}());
+$("#generateBtn").click(function () {
+    var die = new Die(_this.value, _this.div);
     console.log(die);
     dieArray.push(die);
 });
-
-$(`#sumDice`).click(() => {
-    let result = sumDice(dieArray);
+$("#sumDice").click(function () {
+    var result = sumDice(dieArray);
     alert(result);
 });
-
-let sumDice = (arr) => {
-    let sum = 0;
-    for (let i = 0; i < arr.length; i++) {
+var sumDice = function (arr) {
+    var sum = 0;
+    for (var i = 0; i < arr.length; i++) {
         sum += arr[i].value;
     }
     return sum;
-}
+};

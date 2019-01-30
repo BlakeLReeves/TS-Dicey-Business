@@ -2,19 +2,25 @@
   "name": "TS-Dicey-Business",
   "version": "1.0.0",
   "description": "Covalence",
-  "main": "app.js",
+  "dependencies": {
+    "@types/jquery": "^3.3.29",
+    "jquery": "^3.3.1",
+    "typescript": "^3.2.4"
+  },
+  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "tsc -w"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/blakereeves19/Dicey-Business.git"
+    "url": "git+https://github.com/blakereeves19/TS-Dicey-Business.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/blakereeves19/Dicey-Business/issues"
+    "url": "https://github.com/blakereeves19/TS-Dicey-Business/issues"
   },
-  "homepage": "https://github.com/blakereeves19/Dicey-Business#readme"
+  "homepage": "https://github.com/blakereeves19/TS-Dicey-Business#readme"
 }
