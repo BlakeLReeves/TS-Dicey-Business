@@ -2,8 +2,11 @@ let dieArray: { value: number, div: JQuery<HTMLElement>}[] = [];
 
 class Die {
 
-    constructor(public value: number, public div: JQuery<HTMLElement>) {
-        this.value;
+    public value: number;
+    public div: JQuery<HTMLElement>;
+
+    constructor() {
+        this.value = 0;
         this.roll();
         this.div = $(`<div></div>`);
         this.div.text(this.value);
@@ -51,7 +54,7 @@ class Die {
 }
 
 $(`#generateBtn`).click(() => {
-    let die = new Die(this.value, this.div);
+    let die = new Die();
     console.log(die);
     dieArray.push(die);
 });

@@ -49,7 +49,7 @@ var Die = /** @class */ (function () {
     return Die;
 }());
 $("#generateBtn").click(function () {
-    var die = new Die(_this.value, _this.div);
+    var die = new Die();
     console.log(die);
     dieArray.push(die);
 });
